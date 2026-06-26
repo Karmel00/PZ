@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "NoteSync",
+    "slug": "notesync",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "notesync",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.notesync.app"
+    },
+    "plugins": ["expo-notifications"]
+  }
+}
