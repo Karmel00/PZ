@@ -39,33 +39,20 @@ NoteSync to aplikacja do tworzenia i synchronizacji notatek między aplikacją w
 
 ## Uruchomienie projektu
 
-### Backend
+###Wymagania:
+
+- Docker
+- Docker Compose
+
+### Start
 
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+docker compose up --build
 ```
 
-### PWA
+### Dostęp
 
-```bash
-cd pwa
-npm install
-npm run dev
-```
-
-### Mobile
-
-```bash
-cd mobile
-npm install
-npx expo start
-```
-
-## Testy
-
-Backend:
+#### WEB
 
 ```bash
 http://localhost:5173
@@ -75,6 +62,20 @@ http://localhost:5173
 
 ```bash
 http://<IP_komputera>:5173
+```
+
+## Testy
+
+Backend:
+
+```bash
+pytest
+```
+
+PWA:
+
+```bash
+npm test
 ```
 
 Mobile:
