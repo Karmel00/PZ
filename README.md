@@ -2,100 +2,66 @@
 
 ## Opis projektu
 
-NoteSync to aplikacja do tworzenia notatek pomiędzy aplikacją webową oraz aplikacją mobilną Android.
+NoteSync to aplikacja do tworzenia i synchronizacji notatek między aplikacją webową (PWA) oraz aplikacją mobilną (Android).
 
 ## Główne funkcjonalności
 
-* Rejestracja użytkownika
-* Logowanie JWT
-* Tworzenie notatek
-* Edycja notatek
-* Usuwanie notatek
-* Tagi notatek
-* Synchronizacja danych
-* Powiadomienia mobilne
+- Rejestracja użytkownika
+- Logowanie JWT
+- Tworzenie notatek
+- Edycja notatek
+- Usuwanie notatek
+- Tagi notatek
+- Synchronizacja danych między urządzeniami
+- Powiadomienia mobilne
 
 ## Technologie
 
 ### Backend
-
-* FastAPI
-* SQLAlchemy
-* PostgreSQL
-* JWT Authentication
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
+- JWT Authentication
 
 ### PWA
-
-* React
-* Vite
-* Service Worker
-* IndexedDB
+- React + Vite
+- Service Worker
+- IndexedDB
 
 ### Mobile
-
-* React Native
-* Expo
-* AsyncStorage
-* Expo Notifications
+- React Native (Expo)
+- AsyncStorage
+- Expo Notifications
 
 ### Infra
-
-* Docker
-* Docker Compose
-* GitHub Actions
-
-## Architektura
-
-```mermaid
-graph LR
-
-PWA --> API
-MOBILE --> API
-API --> PostgreSQL
-```
-
-## Bezpieczeństwo
-
-* JWT Authentication
-* Hashowanie haseł bcrypt
-* Walidacja danych wejściowych
-* CORS
-* Ochrona endpointów wymagających autoryzacji
-
-### PWA
-
-Service Worker przechowuje zasoby aplikacji w pamięci podręcznej przeglądarki.
-
-### Mobile
-
-Dane przechowywane są lokalnie przy użyciu AsyncStorage.
-
-Po odzyskaniu połączenia następuje synchronizacja z backendem.
+- Docker
+- Docker Compose
 
 ## Uruchomienie projektu
 
-### Backend
+###Wymagania:
+
+- Docker
+- Docker Compose
+
+### Start
 
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+docker compose up --build
 ```
 
-### PWA
+### Dostęp
+
+#### WEB
 
 ```bash
-cd pwa
-npm install
-npm run dev
+http://localhost:5173
 ```
 
-### Mobile
+#### MOBILE
 
 ```bash
-cd mobile
-npm install
-npx expo start
+http://<IP_komputera>:5173
 ```
 
 ## Testy
